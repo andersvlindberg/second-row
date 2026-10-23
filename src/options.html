@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Second Row settings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="options.css">
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon48.png" alt="" width="32" height="32">
+    <div>
+      <h1>Second Row</h1>
+      <p>A second bookmarks bar under your normal one.</p>
+    </div>
+  </header>
+
+  <section>
+    <h2>Bookmarks</h2>
+    <label for="folder">Show the bookmarks in this folder</label>
+    <select id="folder"></select>
+    <p class="hint">Drag bookmarks into this folder in Chrome’s bookmark manager or on the normal bar. Sub-folders open as menus.</p>
+  </section>
+
+  <section>
+    <h2>Style</h2>
+    <div class="styles" role="radiogroup" aria-label="Bar style">
+      <label class="card"><input type="radio" name="style" value="full"><span class="name">Full</span><span class="desc">Icon and title</span><span class="demo full"><i></i>Docs<i></i>Mail<i></i>dbt</span></label>
+      <label class="card"><input type="radio" name="style" value="compact"><span class="name">Compact</span><span class="desc">Titles only, slimmer</span><span class="demo compact">Docs Mail dbt</span></label>
+      <label class="card"><input type="radio" name="style" value="icons"><span class="name">Icons</span><span class="desc">Favicons only</span><span class="demo icons"><i></i><i></i><i></i><i></i></span></label>
+    </div>
+  </section>
+
+  <section class="grid">
+    <div>
+      <h2>Theme</h2>
+      <select id="theme">
+        <option value="auto">Follow system</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
+    </div>
+    <div>
+      <h2>Layout</h2>
+      <select id="layout">
+        <option value="push">Push the page down</option>
+        <option value="overlay">Float over the page</option>
+      </select>
+    </div>
+  </section>
+
+  <section>
+    <label class="check"><input type="checkbox" id="newtab"> Open bookmarks in a new tab</label>
+    <label class="check"><input type="checkbox" id="visible"> Show the bar</label>
+    <p class="hint">Toggle the bar anywhere with <kbd>Alt</kbd> + <kbd>B</kbd>. Change the shortcut at <code>chrome://extensions/shortcuts</code>. Ctrl/Cmd-click or middle-click opens a link in a background tab.</p>
+  </section>
+
+  <p class="saved" id="saved" aria-live="polite"></p>
+</main>
+<script src="options.js"></script>
+</body>
+</html>

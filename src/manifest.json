@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Second Row",
+  "short_name": "Second Row",
+  "version": "1.0.0",
+  "description": "A second, minimal bookmarks bar under your normal one. Pick a folder, pick a style: full, compact or icons only.",
+  "permissions": ["bookmarks", "storage", "favicon"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    { "resources": ["_favicon/*", "bar.css"], "matches": ["<all_urls>"], "extension_ids": ["*"] }
+  ],
+  "options_page": "options.html",
+  "action": { "default_title": "Second Row settings" },
+  "commands": {
+    "toggle-bar": {
+      "suggested_key": { "default": "Alt+B" },
+      "description": "Show or hide the second row"
+    }
+  },
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" }
+}
